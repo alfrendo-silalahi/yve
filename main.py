@@ -3,25 +3,24 @@ import gi
 gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk
 
+from components.header import Header
+
 
 class Window(Gtk.ApplicationWindow):
     def __init__(self, **kargs):
         super().__init__(**kargs, title="Hello world!")
 
-        box  = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        self.set_child(box) 
+        # set default window size
+        self.set_default_size(1200, 800)
 
-        self.button = Gtk.Button(label="Click Here")
-        self.button.connect('clicked', self.on_button_clicked)
-        box.append(self.button)
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10) 
 
-        self.label = Gtk.Label(label="Label Component")
-        box.append(self.label)
+        header = Header(text="Yve HTTP Client")
+
+        # add child components to parent component
+        box.append(header) 
         
-    def on_button_clicked(self, _widget):
-        self.close()
-
-
+        self.set_child(box)
 def on_activate(app):
     # create window
     win = Window(application=app) 
