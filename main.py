@@ -13,17 +13,19 @@ class Window(Gtk.ApplicationWindow):
         # set default window size
         self.set_default_size(1200, 800)
 
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10) 
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
 
         header = Header(text="Yve HTTP Client")
 
         # add child components to parent component
-        box.append(header) 
-        
+        box.append(header)
+
         self.set_child(box)
+
+
 def on_activate(app):
     # create window
-    win = Window(application=app) 
+    win = Window(application=app)
     win.present()
 
 
