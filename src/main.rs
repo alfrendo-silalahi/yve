@@ -3,7 +3,7 @@ use gtk::{Application, glib};
 use std::sync::Arc;
 use tokio::runtime::Runtime;
 
-const APP_ID: &str = "com.github.alfrendo-silalhi.yve";
+const APP_ID: &str = "com.github.alfrendo-silalahi.yve";
 
 fn main() -> glib::ExitCode {
     let app = Application::builder().application_id(APP_ID).build();
